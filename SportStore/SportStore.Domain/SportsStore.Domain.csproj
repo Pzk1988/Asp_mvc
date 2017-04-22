@@ -76,6 +76,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EfDbContext.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repository\Database\EfDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EfDbContext.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Repository\Database\Products.cs">
       <DependentUpon>EfDbContext.tt</DependentUpon>
     </Compile>
