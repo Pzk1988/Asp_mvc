@@ -1,0 +1,7 @@
+/SportStore/SportStore.Domain/bin
+/SportStore/SportStore.UnitTests/bin
+/SportStore/SportStore.WebUI/bin
+/SportStore/packages
+/SportStore/SportStore.Domain/obj
+/SportStore/SportStore.UnitTests/obj
+/SportStore/SportStore.WebUI/obj
