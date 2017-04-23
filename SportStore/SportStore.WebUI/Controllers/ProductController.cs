@@ -1,8 +1,8 @@
 ﻿using SportsStore.Domain.Abstract;
-using System;
+using SportsStore.Domain.Entities;
+using SportStore.WebUI.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SportsStore.WebUI.Controllers
@@ -10,21 +10,43 @@ namespace SportsStore.WebUI.Controllers
     public class ProductController : Controller
     {
         private IProductRepository repository;
+        private int pageSize;
 
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IProductRepository productRepository, int size = 4)
         {
+            pageSize = size;
             repository = productRepository;
         }
 
-        // GET: Product
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult List()
+        [HttpGet]
+        public ViewResult List(string category, int page = 1)
         {
-            return View(repository.Products);
+            IEnumerable<Product> products = repository.Products
+                    .Where(p => p.Category == category || category == null)
+                    .OrderBy(p => p.Name)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize);
+
+            PageInfo pageInfo = new PageInfo
+            {
+                CurrentPage = page,
+                ItemsPerPage = pageSize,
+                TotalItems = repository.Products.Where(p => p.Category == category || category == null).Count()
+            };
+
+            ProductListViewModel viewModel = new ProductListViewModel()
+            {
+                Products = products,
+                PageInfo = pageInfo,               
+                Category = category,
+        };
+            return View(viewModel);
         }
     }
 }
