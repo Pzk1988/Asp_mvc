@@ -138,6 +138,7 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Infrastructure\Binders\CartModelBinder.cs" />
     <Compile Include="Models\CartViewModel.cs" />
     <Compile Include="Models\NavViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
