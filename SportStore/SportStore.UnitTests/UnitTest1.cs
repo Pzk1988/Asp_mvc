@@ -5,7 +5,7 @@ using SportsStore.Domain.Entities;
 using System.Collections.Generic;
 using SportsStore.WebUI.Controllers;
 using System.Linq;
-using SportStore.WebUI.Models;
+using SportsStore.WebUI.Models;
 
 namespace SportsStore.UnitTests
 {

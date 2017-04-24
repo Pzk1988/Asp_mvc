@@ -1,4 +1,4 @@
-﻿using SportStore.WebUI.Models;
+﻿using SportsStore.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

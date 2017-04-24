@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SportsStore.Domain.Entities;
 using System.Data.Entity;
+using SportsStore.Domain.Repository.Database;
 
 namespace SportStore.Domain.Repository.Database
 {

@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SportStore.WebUI.Models;
+using SportsStore.WebUI.Models;
 
 namespace SportStore.UnitTests
 {

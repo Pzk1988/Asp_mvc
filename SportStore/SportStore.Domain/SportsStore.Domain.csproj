@@ -7,8 +7,8 @@
     <ProjectGuid>{6E8294E8-76CB-4252-9A54-FA6333096F27}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SportStore.Domain</RootNamespace>
-    <AssemblyName>SportStore.Domain</AssemblyName>
+    <RootNamespace>SportsStore.Domain</RootNamespace>
+    <AssemblyName>SportsStore.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -80,6 +80,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EfDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Database\EfDbContext1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EfDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Repository\Database\Products.cs">
       <DependentUpon>EfDbContext.tt</DependentUpon>
