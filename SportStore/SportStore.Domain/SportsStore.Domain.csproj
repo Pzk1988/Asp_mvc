@@ -70,6 +70,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Cart.cs" />
+    <Compile Include="Entities\CartLine.cs" />
     <Compile Include="Repository\Database\DatabaseRepository.cs" />
     <Compile Include="Repository\Database\EfDbContext.Context.cs">
       <AutoGen>True</AutoGen>
