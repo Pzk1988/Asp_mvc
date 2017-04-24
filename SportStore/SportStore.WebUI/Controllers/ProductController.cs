@@ -1,6 +1,6 @@
 ﻿using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Entities;
-using SportStore.WebUI.Models;
+using SportsStore.WebUI.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -37,7 +37,9 @@ namespace SportsStore.WebUI.Controllers
             {
                 CurrentPage = page,
                 ItemsPerPage = pageSize,
-                TotalItems = repository.Products.Where(p => p.Category == category || category == null).Count()
+                TotalItems = category == null ? 
+                    repository.Products.Count() : 
+                    repository.Products.Where(p => p.Category == category).Count()
             };
 
             ProductListViewModel viewModel = new ProductListViewModel()

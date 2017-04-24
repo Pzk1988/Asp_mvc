@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SportStore.Domain.Repository.Database
+namespace SportsStore.Domain.Repository.Database
 {
     using System;
     using System.Collections.Generic;
