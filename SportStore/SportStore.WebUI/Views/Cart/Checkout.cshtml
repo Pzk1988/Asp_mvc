@@ -1,0 +1,44 @@
+﻿@model SportsStore.Domain.Entities.ShippingDetails
+
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Check out now</h2>
+<p>Please enter your details, and we`ll ship your goods right away</p>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div class="form-group">
+        <h3>Ship to</h3>
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <h3>Address</h3>
+        @foreach (var item in ViewData.ModelMetadata.Properties)
+        {
+            if (item.PropertyName != "Name" && item.PropertyName != "GiftWrap")
+            {
+                <div class="form-group">
+                    <label>@(item.DisplayName ?? item.PropertyName)</label>
+                    @Html.TextBox(item.PropertyName, null, new { @class = "form-control" })
+                </div>
+            }
+        }
+    </div>
+
+    <h3>Options</h3>
+    <div class="checkbox">
+        <label>
+            @Html.EditorFor(m => m.GiftWrap) Gift wrap this items 
+        </label>
+    </div>
+
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary" value="Complete order"/>
+    </div>
+}
+

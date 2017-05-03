@@ -15,7 +15,6 @@ namespace SportsStore.WebUI.Controllers
             productRepository = repository;
         }
 
-        [HttpGet]
         public PartialViewResult Menu(string category = null)
         {
             IEnumerable<string> categories = productRepository.Products

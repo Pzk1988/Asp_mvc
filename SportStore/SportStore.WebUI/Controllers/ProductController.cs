@@ -24,7 +24,6 @@ namespace SportsStore.WebUI.Controllers
             return View();
         }
 
-        [HttpGet]
         public ViewResult List(string category, int page = 1)
         {
             IEnumerable<Product> products = repository.Products

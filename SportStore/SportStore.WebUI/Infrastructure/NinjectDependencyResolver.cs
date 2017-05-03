@@ -6,6 +6,7 @@ using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Entities;
 using Moq;
 using SportStore.Domain.Repository.Database;
+using System.Configuration;
 
 namespace SportsStore.WebUI.Infrastructure
 {
@@ -37,7 +38,10 @@ namespace SportsStore.WebUI.Infrastructure
 
             //kernel.Bind<IProductRepository>().ToConstant(mock.Object);
 
+            EmailSettings settings = new EmailSettings{ WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")};
+
             kernel.Bind<IProductRepository>().To<DatabaseRepository>();
+            kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>().WithConstructorArgument("settings", settings);
         }
     }
 }
