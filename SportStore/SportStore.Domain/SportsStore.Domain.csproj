@@ -70,8 +70,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IOrderProcessor.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\CartLine.cs" />
+    <Compile Include="Entities\EmailOrderProcessor.cs" />
+    <Compile Include="Entities\ShippingDetails.cs" />
     <Compile Include="Repository\Database\DatabaseRepository.cs" />
     <Compile Include="Repository\Database\EfDbContext.Context.cs">
       <AutoGen>True</AutoGen>
@@ -121,5 +124,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
